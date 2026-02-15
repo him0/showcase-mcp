@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "showcase-mcp": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["tsx", "/Users/him0/src/showcase-mcp/src/index.ts"]
+    }
+  }
+}

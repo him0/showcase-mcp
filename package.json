@@ -1,0 +1,40 @@
+{
+  "name": "showcase-mcp",
+  "version": "0.1.0",
+  "type": "module",
+  "bin": {
+    "showcase-mcp": "./bin/showcase-mcp.js"
+  },
+  "main": "./dist/index.js",
+  "scripts": {
+    "build:assets": "rolldown src/ui/index.tsx -f iife -o assets/bundle.js -m -p browser && tailwindcss -i src/ui/input.css -o assets/styles.css -m",
+    "build:ts": "tsc",
+    "build": "npm run build:assets && npm run build:ts",
+    "dev": "tsx src/index.ts",
+    "start": "node dist/index.js",
+    "setup": "tsx scripts/setup-neutralino.ts"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.19.9",
+    "@modelcontextprotocol/sdk": "^1.26.0",
+    "hono": "^4.11.9",
+    "marked": "^17.0.1",
+    "mermaid": "^11.12.2",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.18",
+    "@types/node": "^25.2.3",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "rolldown": "1.0.0-rc.4",
+    "tailwindcss": "^4.1.18",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
